@@ -5,3 +5,6 @@
 * FirstAuto.java (sample of first time getting autonomous mode working)
 
 President: Justin F.
+
+Tips to Remember:
+Start A toggles between User1 and User2 (User1 makes controller function)
