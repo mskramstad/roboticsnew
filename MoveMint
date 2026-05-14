@@ -1,0 +1,53 @@
+package org.firstinspires.ftc.teamcode;
+
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
+
+@TeleOp(name = "MoveMint (Blocks to Java)")
+public class MoveMint extends LinearOpMode {
+
+  private DcMotor frontRight;
+  private DcMotor backRight;
+  private DcMotor frontLeft;
+  private DcMotor backLeft;
+
+  /**
+   * This function is executed when this OpMode is selected from the Driver Station.
+   */
+  @Override
+  public void runOpMode() {
+    float vertical;
+    float horizontal;
+    float pivot;
+
+    frontRight = hardwareMap.get(DcMotor.class, "frontRight");
+    backRight = hardwareMap.get(DcMotor.class, "backRight");
+    frontLeft = hardwareMap.get(DcMotor.class, "frontLeft");
+    backLeft = hardwareMap.get(DcMotor.class, "backLeft");
+
+    // Put initialization blocks here.
+    frontRight.setDirection(DcMotor.Direction.REVERSE);
+    backRight.setDirection(DcMotor.Direction.REVERSE);
+    frontLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    backLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    frontRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    backRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+    waitForStart();http://192.168.43.1:8080/java/editor.html?/src/org/firstinspires/ftc/teamcode/MoveMint.java
+    if (opModeIsActive()) {
+      // Put run blocks here.
+      while (opModeIsActive()) {
+        // Put loop blocks here.
+        vertical = gamepad1.right_stick_y;
+        horizontal = gamepad1.right_stick_x;
+        pivot = gamepad1.left_stick_x;
+ 
+        frontLeft.setPower(pivot + (vertical - horizontal));
+        backRight.setPower(pivot + vertical + horizontal);
+        frontRight.setPower(-pivot + vertical + horizontal);
+        backLeft.setPower(-pivot + (vertical - horizontal));
+        telemetry.update();
+      }
+    }
+  }
+}
