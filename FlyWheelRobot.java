@@ -1,3 +1,6 @@
+// In the driver hub, we must assign variables to specific motors and servos
+// three dots in corner and configure robot
+
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
@@ -50,6 +53,9 @@ public class FlyWheelRobot extends LinearOpMode {
         while (opModeIsActive()) {
 
             // Drivetrain input
+
+            // use the joysticks on the controller to move the robots
+            //
             double drive = -gamepad1.left_stick_y;
             double strafe = gamepad1.right_stick_x;
             double rotate = gamepad1.left_stick_x;
