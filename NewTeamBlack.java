@@ -41,6 +41,10 @@ public class NewTeamBlack extends LinearOpMode {
   @Override
   public void runOpMode() {
     //Classifying Configurations
+
+    // same movement
+    // up and down left dpad raises and lowers box
+    // red button (b) is toggle for the arm (up and down)
     fl_motor = hardwareMap.get(DcMotor.class, "fl_motor");
     fr_motor = hardwareMap.get(DcMotor.class, "fr_motor");
     bl_motor = hardwareMap.get(DcMotor.class, "bl_motor");
