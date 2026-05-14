@@ -55,7 +55,13 @@ public class FlyWheelRobot extends LinearOpMode {
             // Drivetrain input
 
             // use the joysticks on the controller to move the robots
-            //
+            // left joystick push forward and backwards to move straight and back
+            // left joystick left and right turn around
+            // right joystick left and right move horizontally.
+            
+            // blue button (x) is a toggle for the flywheel
+            // up arrow on left - dpad loads the ball
+            // down arrow is supposed to reject the ball
             double drive = -gamepad1.left_stick_y;
             double strafe = gamepad1.right_stick_x;
             double rotate = gamepad1.left_stick_x;
